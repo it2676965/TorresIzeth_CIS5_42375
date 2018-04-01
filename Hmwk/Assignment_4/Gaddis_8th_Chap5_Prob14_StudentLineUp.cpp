@@ -15,9 +15,12 @@ using namespace std;
 
 main()
 {
-    int students = 0; 
-    string name, first, last;
+    int students = 0;         //number of students 
+    string name;              //To hold names of students 
+    string first;             //To hold name of first student on list 
+    string last;              //To hold name of last student on list
     
+    //Request amount of students 
     cout << "How many students do you have in your class?\n";
     cin >> students;
     
@@ -34,11 +37,14 @@ main()
         cout << "Name of student " << a << ":\n";
         cin >> name;
         
+        //Declare first and last to be read from list of names 
         if ( a == 1)
         {
             first = name;
             last = name;
         }
+        
+        //Declare fist name and last name from list 
         else 
         {
             if (name < first)
@@ -51,8 +57,6 @@ main()
     //Display first and last student
     cout << "The student at the front of the line is " << first << endl;
     cout << "The last student at the end of the line is " << last << endl;
-    
-    
     
     
     return 0;

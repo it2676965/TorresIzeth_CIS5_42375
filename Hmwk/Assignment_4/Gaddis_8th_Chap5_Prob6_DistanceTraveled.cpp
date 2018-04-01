@@ -12,7 +12,9 @@ using namespace std;
 main ()
 {
 
-int time =0, speed = 0, distance ;
+int time =0;        //Time traveled 
+int speed = 0;      //Speed in MPH
+int dist;           //Distance traveled 
 
 //Get the number of hours traveled 
 cout << "This program will calculate how much you traveled every hour.\n";
@@ -27,10 +29,11 @@ cin >> speed;
 cout << "Hours \t\t Distance Traveled\n";
 cout << "-------------------------------\n";
 
+//Calculate distance traveled, initialize and display 
 for (int num = 1; num <= time; num++)
 {
-    distance = (speed * num);
-    cout << num << "\t\t" << distance << endl;
+    dist = (speed * num);
+    cout << num << "\t\t" << dist << endl;
 
 }
 

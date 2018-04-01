@@ -15,44 +15,51 @@ using namespace std;
 
 main ()
 {
-    int years = 0;                  //Number of years to collect data
-    float monthRainfall = 0;        //Rainfall per month
-    const int totalMonths = 12;         //Total number of months with data
-    float averageRainfall = 0.00;   //Average rainfall per month
-    float totalRainfall = 0.00;
+    int years = 0;               //Number of years to collect data
+    double moRain = 0;          //Rainfall per month 
+    const int tlMon = 12;       //Total number of months with data
+    double tlRain = 0.00;       //Total rainfall  tlRain
     
+    //Display message and request number of years to collect data
     cout << "This program calculates the average rainfall over a number of years\n";
     cout << "Please enter the number of years you have data for:\n";
     cin >> years;
     
+    //If years are less than 1, display error message 
     while (years < 1)
     {
         cout << "Please enter a number number 1 or larger for years.\n";
         cin >> years; 
     }
     
+    //Calculate number of years and request rainfall for every month 
     for (int a = 1; a <= years; a++)
     {
-        for (int months = 1; months <= totalMonths; months++)
+        for (int months = 1; months <= tlMon; months++)
         {
             cout << "Enter the rainfall for month " << months << " in inches:\n";
-            cin >> monthRainfall;
+            cin >> moRain;
             
-            while (monthRainfall < 0)
+            //If user enters a negative number for rainfall, display error message
+            while (moRain < 0)
             {
                 cout << "Please enter a positive number for rainfall:";
-                cin >> monthRainfall;
+                cin >> moRain;
                        
             }
-            totalRainfall += monthRainfall;
+            //Calculate total amount of rain 
+            tlRain += moRain;
         }
         
     }
+    //set numeric formating 
     cout << fixed << showpoint << setprecision(2);
-    cout << "Number of months is: " << years * totalMonths << endl;
-    cout << "Total rainfall is: " << totalRainfall << " inches." << endl;
-    cout << "Average rainfall per month is: " << totalRainfall / 
-            (years * monthRainfall) << " inches.";
+    
+    //Display output 
+    cout << "Number of months is: " << years * tlMon << endl;
+    cout << "Total rainfall is: " << tlRain << " inches." << endl;
+    cout << "Average rainfall per month is: " << tlRain / 
+            (tlMon * moRain) << " inches.";
     
     return 0;
 }
