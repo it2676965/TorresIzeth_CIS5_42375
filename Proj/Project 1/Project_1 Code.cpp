@@ -55,62 +55,65 @@ main ()
     cin >> deal;
  
 
-        if (deal == 'a')
-        {
+    if (deal == 'a') //If player chooses to take third card 
+    {   
+        //Display players three cards 
         cout << "Your cards are " << pcard_1 << ", " << pcard_2 << " and " << pcard_3 << " for a total of " << playTl_2 << endl;
         
-            if (playTl_2 > 21)
+            if (playTl_2 > 21) //Player losses, display loss message 
             {    
                 cout << "You loose, you went over 21.\n";
             }   
-            else if (playTl_2 < 21)
+            else if (playTl_2 < 21) //Player still under 21, request new card 
             {
                 cout << "Would you like another card? Type 'c' for yes and 'd' for no.\n";
-                cin >> deal;
+                cin >> deal;    //Requesting if player wants fourth card 
             }
-        }
-        if (deal == 'b') 
-        {
+    }
+    if (deal == 'b') //If player denies third card 
+    {   
+        //Reveal dealers cards display players three cards 
         cout << "Dealer has " << dcard_1 << " and " << dcard_2 << " for a total of " << dealTl << endl;
         cout << "You have a total of " << playTl_1 << endl;
         
-            if (dealTl > playTl_1) 
+            if (dealTl > playTl_1) //If player looses, display error message
             {
                 cout << "Sorry, you loose. Dealer scored higher than you.\n";
             }
-            else if (dealTl < playTl_1);
+            else if (dealTl < playTl_1);//If player wins, displays win message
             {
                 cout << "Congratulations, you win! You scored higher than the dealer.\n";
             }
-        }
-        if (deal == 'c')
-        {
-            cout << "Your cards are " << pcard_1 << ", " << pcard_2 << ", "  << pcard_3 << " and " << pcard_4 <<" for a total of " << playTl_3 << endl;
-            cout << "Dealer has " << dcard_1 << " and " << dcard_2 << " for a total of " << dealTl << endl;
+    }
+    if (deal == 'c') //If player requests fourth card 
+    {
+        //Display players four cards and reveal dealers cards 
+        cout << "Your cards are " << pcard_1 << ", " << pcard_2 << ", "  << pcard_3 << " and " << pcard_4 <<" for a total of " << playTl_3 << endl;
+        cout << "Dealer has " << dcard_1 << " and " << dcard_2 << " for a total of " << dealTl << endl;
                 
-            if (playTl_3 > 21)
+            if (playTl_3 > 21) //If player goes over 21, display loss message
             {
                 cout << "You went over 21, you loose\n";
             }
-            else if ((playTl_3 < 21) || (dealTl < playTl_3))
+            else if ((playTl_3 < 21) || (dealTl < playTl_3)) //If player score higher than dealer, display win message 
             {
                 cout << "Congratulations! you win.\n";
             }
-        }
-    if (deal == 'd')
-        {
-            cout << "Your cards are " << pcard_1 << ", " << pcard_2 << " and " << pcard_3 << " for a total of " << playTl_2 << endl;
-            cout << "Dealer has " << dcard_1 << " and " << dcard_2 << " for a total of " << dealTl << endl;
+    }
+    if (deal == 'd') //If player denies third card 
+    {
+        //Display players cards and reveal dealers cards 
+        cout << "Your cards are " << pcard_1 << ", " << pcard_2 << " and " << pcard_3 << " for a total of " << playTl_2 << endl;
+        cout << "Dealer has " << dcard_1 << " and " << dcard_2 << " for a total of " << dealTl << endl;
                        
-                if ((playTl_2 < 21) || ( playTl_2 > dealTl))
-                {
+            if ((playTl_2 < 21) || ( playTl_2 > dealTl)) //If player scores higher than dealer, display win message
+            {
                 cout << "Congratulations! You win.\n";
-                }
-                else if ((playTl_2 < 21) || (playTl_2 < dealTl))
-                {
+            }
+            else if ((playTl_2 < 21) || (playTl_2 < dealTl)) //If dealer scores higher, display loss message
+            {
                 cout << "Dealer scored higher, you loose.\n";
-                } 
-        }
+            } 
+    }
             return 0;
-
 }
