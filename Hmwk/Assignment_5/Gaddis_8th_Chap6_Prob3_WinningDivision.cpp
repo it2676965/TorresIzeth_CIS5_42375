@@ -12,7 +12,6 @@
 
 #include <iostream>
 #include <iomanip>
-#include <cmath>
 #include <string>
 
 using namespace std;
@@ -59,7 +58,7 @@ int main(int argc, char** argv) {
 //Definition of getSales function 
 double getSales(string division)
 {
-    double sales;
+    double sales=0;
     
     cout << "Please enter sales for the " << division << " division" <<endl;
     cin >> sales;
@@ -75,8 +74,8 @@ double getSales(string division)
 
 void findHighest(double nEast, double sEast, double nWest, double sWest)
 {
-    string division;
-    double greatest;
+    string division = "";
+    double greatest=0;
     
     if (nEast > sEast && nEast >nWest && sEast > sWest)
     {
